@@ -78,14 +78,23 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     window.alert("You need to pick a valid option. Try again!");
 }
 
-} //end fight function
-}; //end while  
-
-
-window.alert("Welcome to Robot Gladiators!");
-
-for(var i = 0; i < enemyNames.length; i++) {
+if (playerHealth > 0) {
+    window.alert("Welcome to Robot Gladiators!Round " + ( i + 1 ) );
     var pickedEnemyName = enemyNames[i];
+    debugger
     enemyHealth = 50;
     fight(pickedEnemyName);
 }
+else {
+    window.alert("You have lost your robot in battle! Game Over!");
+    break;
+}
+
+} //end while 
+}; //end fight function
+
+for(var i = 0; i < enemyNames.length; i++) {
+    var pickedEnemyName = enemyNames[i];
+    //enemyHealth = 50;
+    fight(pickedEnemyName);
+};
